@@ -5,7 +5,7 @@ pipeline{
 		maven 'maven3'
 	}
 	environment{
-        GITHUB_REPO= credentials('GITHUB_REPO')
+        GITHUB_REPO= "https://github.com/Piexie3/hekopay-core.git"
 	}
 
 	stages{

@@ -1,0 +1,8 @@
+package com.hekoinc.business_service.utils.enums;
+
+public enum BusinessType {
+    SOLE_PROPRIETORSHIP,
+    PARTNERSHIP, CORPORATION, LLC, NON_PROFIT,
+    E_COMMERCE, MARKETPLACE, SAAS, FINTECH, RETAIL, HOSPITALITY,
+    HEALTHCARE, EDUCATION, GOVERNMENT
+}

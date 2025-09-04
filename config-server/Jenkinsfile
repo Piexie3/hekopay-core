@@ -21,7 +21,9 @@ pipeline{
 		}
 		stage("build application"){
 			steps {
-                sh "mvn clean package"
+			    dir('config-server') {
+				    sh "mvn clean package"
+                }
 			}
 		}
 	}

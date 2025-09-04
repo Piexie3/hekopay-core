@@ -1,0 +1,33 @@
+pipeline{
+	agent { label 'jenkins-agent"}
+	tools {
+		jdk 'java21'
+		maven 'maven3'
+	}
+	environment{
+        GITHUB_REPO= credentials('GITHUB_REPO')
+	}
+
+	stages{
+		stage("Cleanup Workspace"){
+			steps {
+				cleanWs()
+			}
+		}
+		stage("Check out from SCM"){
+			steps {
+				git branch: 'main': credentialsId: 'github' : url: "${GITHUB_REPO}/config-server"
+			}
+		}
+		stage("build application"){
+			steps {
+				sh "mvn clean package"
+			}
+		}
+		stage("Test application"){
+			steps {
+				sh "mvn test"
+			}
+		}
+	}
+}

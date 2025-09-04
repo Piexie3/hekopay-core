@@ -17,7 +17,7 @@ pipeline{
 		stage("Check out from SCM"){
 			steps {
 			    dir('config-server') {
-			        git branch: 'main': credentialsId: 'github' : url: ${GITHUB_REPO}
+			        git branch: 'main', credentialsId: 'github', url: "${GITHUB_REPO}"
 			    }
 			}
 		}
